@@ -1,92 +1,27 @@
 [
     {
         "category": "Dresses",
-        "icon": "https://img.freepik.com/free-photo/smiling-beautiful-young-woman-pink-mini-dress-posing-studio_155003-13755.jpg?size=626&ext=jpg&ga=GA1.1.400272162.1684998168&semt=ais",
-        "products": [
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-                "rating": "4.5",
-                "price": "60"
-            },
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-                "rating": "4.4",
-                "price": "50"
-            }
-        ]
+        "option": "trending",
+        "icon": "https://img.freepik.com/free-photo/smiling-beautiful-young-woman-pink-mini-dress-posing-studio_155003-13755.jpg?size=626&ext=jpg&ga=GA1.1.400272162.1684998168&semt=ais"
     },
     {
         "category": "Tops & T-Shirt",
-        "icon": "https://img.freepik.com/free-photo/fashion-woman-with-clothes_1203-8302.jpg?w=360&t=st=1696942533~exp=1696943133~hmac=0d5564f766e90c6ee586d7fe08ca4fd1dd6d21d857ba27f9752eaf8ea4a8019b",
-        "products": [
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-                "rating": "4.5",
-                "price": "60"
-            },
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-                "rating": "4.4",
-                "price": "50"
-            }
-        ]
+        "option": "trending",
+        "icon": "https://img.freepik.com/free-photo/fashion-woman-with-clothes_1203-8302.jpg?w=360&t=st=1696942533~exp=1696943133~hmac=0d5564f766e90c6ee586d7fe08ca4fd1dd6d21d857ba27f9752eaf8ea4a8019b"
     },
     {
         "category": "Shoes",
-        "icon": "https://img.freepik.com/free-photo/men-shoes_1203-8652.jpg?w=1060&t=st=1696942613~exp=1696943213~hmac=8498a8491c4bfef19e8e15b80230c4c13b8926500a03ed28e7f3fa5c438345ba",
-        "products": [
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-                "rating": "4.5",
-                "price": "60"
-            },
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-                "rating": "4.4",
-                "price": "50"
-            }
-        ]
+        "option": "trending",
+        "icon": "https://img.freepik.com/free-photo/men-shoes_1203-8652.jpg?w=1060&t=st=1696942613~exp=1696943213~hmac=8498a8491c4bfef19e8e15b80230c4c13b8926500a03ed28e7f3fa5c438345ba"
     },
     {
         "category": "Backpack",
-        "icon": "https://img.freepik.com/free-photo/roadtrip-concept-with-backpack-flask_23-2149270128.jpg?size=626&ext=jpg&ga=GA1.2.400272162.1684998168&semt=sph",
-        "products": [
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-                "rating": "4.5",
-                "price": "60"
-            },
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-                "rating": "4.4",
-                "price": "50"
-            }
-        ]
+        "option": "regular",
+        "icon": "https://img.freepik.com/free-photo/roadtrip-concept-with-backpack-flask_23-2149270128.jpg?size=626&ext=jpg&ga=GA1.2.400272162.1684998168&semt=sph"
     },
     {
         "category": "Accessories",
-        "icon": "https://img.freepik.com/free-photo/workplace-business-modern-male-accessories-laptop-white-background_155003-3942.jpg?size=626&ext=jpg&ga=GA1.1.400272162.1684998168&semt=sph",
-        "products": [
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-                "rating": "4.5",
-                "price": "60"
-            },
-            {
-                "name": "Classic Tailored Blazer",
-                "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-                "rating": "4.4",
-                "price": "50"
-            }
-        ]
+        "option": "regular",
+        "icon": "https://img.freepik.com/free-photo/workplace-business-modern-male-accessories-laptop-white-background_155003-3942.jpg?size=626&ext=jpg&ga=GA1.1.400272162.1684998168&semt=sph"
     }
 ]

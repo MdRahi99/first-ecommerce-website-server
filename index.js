@@ -21,23 +21,36 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     const productsCategory = client.db('FirstECommerceDB').collection('productsCategory');
+    const products = client.db('FirstECommerceDB').collection('products');
 
     app.get('/products-categories', async (req, res) => {
-        const query = {};
-        const cursor = productsCategory.find(query);
-        const category = await cursor.toArray();
-        res.send(category);
-      });
+      const query = {};
+      const cursor = productsCategory.find(query);
+      const category = await cursor.toArray();
+      res.send(category);
+    });
+    app.get('/products', async (req, res) => {
+      const query = {};
+      const cursor = products.find(query);
+      const category = await cursor.toArray();
+      res.send(category);
+    });
+    app.get('/products/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await products.findOne(query);
+      res.send(result);
+    });
 
-  } finally {}
+  } finally { }
 }
 run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send(`Server Started On Port ${port}`)
+  res.send(`Server Started On Port ${port}`)
 });
 
 app.listen(port, () => {
-    console.log(`Server Started On Port ${port}`);
+  console.log(`Server Started On Port ${port}`);
 });
