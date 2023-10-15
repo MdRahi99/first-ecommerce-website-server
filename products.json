@@ -5,118 +5,40 @@
         "rating": "4.5",
         "price": "60",
         "option": "new arrivals",
-        "category": "Dresses"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "new arrivals",
-        "category": "Dresses"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-        "rating": "4.5",
-        "price": "60",
-        "option": "new arrivals",
-        "category": "Dresses"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Tops & T-Shirt"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-        "rating": "4.5",
-        "price": "60",
-        "option": "featured items",
-        "category": "Tops & T-Shirt"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Tops & T-Shirt"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-        "rating": "4.5",
-        "price": "60",
-        "option": "featured items",
-        "category": "Shoes"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Shoes"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-        "rating": "4.5",
-        "price": "60",
-        "option": "new arrivals",
-        "category": "Shoes"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "new arrivals",
-        "category": "Backpack"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Backpack"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "new arrivals",
-        "category": "Backpack"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Accessories"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "new arrivals",
-        "category": "Accessories"
-    },
-    {
-        "name": "Classic Tailored Blazer",
-        "image": "https://www.transparentpng.com/thumb/shirt/jcsIrn-long-sleeved-t-shirt-collar-png.png",
-        "rating": "4.4",
-        "price": "50",
-        "option": "featured items",
-        "category": "Accessories"
+        "category": "Dresses",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "product_code": "134",
+        "tag": "VW-2",
+        "sample_img": [
+            {
+                "img1": "https://poshgarments.com/wp-content/uploads/2021/09/Mens-Shirt-MWS0001.jpg",
+                "img2": "https://richmanbd.com/wp-content/uploads/2023/09/23a-600x600.jpg",
+                "img3": "https://infinitymegamall.com/wp-content/uploads/2023/10/14a-370x444.jpg",
+                "img4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSL4M708IAa4nAqap8HPjQVxH8_J7LhRd4Tea8fIBdu7vthdm4JYWfITUW9aYCJQKez6M&usqp=CAU",
+                "img5": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTemsMYaL7rvge1hcV0VOAdbZAdfY9nJWKRDOSRFVK4GLitvBq4sWDiyTOUbl0K1q87k5U&usqp=CAU"
+            }
+        ],
+        "brand_details": [
+            {
+                "brand_name": "Fabrilife",
+                "brand_description": "Fabrilife is a fashion startup based in Bangladesh. We focus on carefully selecting the best clothing that is comfortable, looks great, and makes you confident. We believe that attitude and confidence go hand in hand with clothing.",
+                "brand_logo": "https://play-lh.googleusercontent.com/NSvYCI0hQq9_Jzo_qZS2gdE-p_8ru0bTA2QZc0657L221HGG8B37E7Em0dAy8RmeF_4H"
+            }
+        ],
+        "delivery_policies": "Delivery Inside Dhaka City Orders which will be shipped inside Dhaka city, Customers will be recieveing his/her package as soon as within 24 Hours  and no later than 48 Hours.Dlivery Charge 60 Tk.Delivery Outside Dhaka City Orders to be delivered outside Dhaka, Customers will be recieveing his/her package as soon as within 48 Hours  and no later than 96 HoursDlivery Charge 100 Tk",
+        "color": [
+            {
+                "color1": "red",
+                "color2": "white",
+                "color3": "black"
+            }
+        ],
+        "size": [
+            {
+                "size1": "m",
+                "size2": "l",
+                "size3": "xl"
+            }
+        ]
     }
 ]
