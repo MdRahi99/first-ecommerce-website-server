@@ -1,43 +1,638 @@
 [
     {
-        "name": "Classic Tailored Blazer",
-        "image": "https://cdn.shopify.com/s/files/1/0271/4822/2521/files/3124-KT28-001_large.png?v=1692396817",
-        "rating": "4.5",
-        "price": "60",
-        "option": "new arrivals",
+        "name": "Summer Floral Dress",
+        "image": "https://example.com/summer-dress.jpg",
+        "rating": "4.2",
+        "price": "55",
+        "option": "featured items",
         "category": "Dresses",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "product_code": "134",
-        "tag": "VW-2",
+        "description": "A perfect summer dress with a floral pattern for a fresh look.",
+        "product_code": "135",
+        "tag": "SD-4",
         "sample_img": [
-            {
-                "img1": "https://poshgarments.com/wp-content/uploads/2021/09/Mens-Shirt-MWS0001.jpg",
-                "img2": "https://richmanbd.com/wp-content/uploads/2023/09/23a-600x600.jpg",
-                "img3": "https://infinitymegamall.com/wp-content/uploads/2023/10/14a-370x444.jpg",
-                "img4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSL4M708IAa4nAqap8HPjQVxH8_J7LhRd4Tea8fIBdu7vthdm4JYWfITUW9aYCJQKez6M&usqp=CAU",
-                "img5": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTemsMYaL7rvge1hcV0VOAdbZAdfY9nJWKRDOSRFVK4GLitvBq4sWDiyTOUbl0K1q87k5U&usqp=CAU"
-            }
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
         ],
         "brand_details": [
             {
-                "brand_name": "Fabrilife",
-                "brand_description": "Fabrilife is a fashion startup based in Bangladesh. We focus on carefully selecting the best clothing that is comfortable, looks great, and makes you confident. We believe that attitude and confidence go hand in hand with clothing.",
-                "brand_logo": "https://play-lh.googleusercontent.com/NSvYCI0hQq9_Jzo_qZS2gdE-p_8ru0bTA2QZc0657L221HGG8B37E7Em0dAy8RmeF_4H"
+                "brand_name": "BlossomStyle",
+                "brand_description": "BlossomStyle brings you the latest floral fashion trends for every season.",
+                "brand_logo": "https://example.com/blossomstyle-logo.jpg"
             }
         ],
-        "delivery_policies": "Delivery Inside Dhaka City Orders which will be shipped inside Dhaka city, Customers will be recieveing his/her package as soon as within 24 Hours  and no later than 48 Hours.Dlivery Charge 60 Tk.Delivery Outside Dhaka City Orders to be delivered outside Dhaka, Customers will be recieveing his/her package as soon as within 48 Hours  and no later than 96 HoursDlivery Charge 100 Tk",
+        "delivery_policies": "Standard shipping with a delivery time of 3-5 business days. Free shipping on orders over $50.",
         "color": [
             {
-                "color1": "red",
-                "color2": "white",
-                "color3": "black"
+                "color1": "blue",
+                "color2": "yellow",
+                "color3": "pink"
             }
         ],
         "size": [
             {
-                "size1": "m",
-                "size2": "l",
-                "size3": "xl"
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Men's Slim Fit Shirt",
+        "image": "https://example.com/mens-shirt.jpg",
+        "rating": "4.6",
+        "price": "40",
+        "option": "featured items",
+        "category": "Backpack",
+        "description": "A classic slim-fit shirt for men, suitable for any occasion.",
+        "product_code": "136",
+        "tag": "MS-7",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "GentlemanStyle",
+                "brand_description": "GentlemanStyle offers a collection of men's fashion that exudes sophistication and style.",
+                "brand_logo": "https://example.com/gentlemanstyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on all orders. Delivery within 4-6 business days.",
+        "color": [
+            {
+                "color1": "white",
+                "color2": "blue",
+                "color3": "gray"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Elegant Floral Print Dress",
+        "image": "https://example.com/floral-dress.jpg",
+        "rating": "4.7",
+        "price": "55",
+        "option": "new arrivals",
+        "category": "Accessories",
+        "description": "A stylish floral print dress for a trendy look.",
+        "product_code": "135",
+        "tag": "FL-1",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "FloralFusion",
+                "brand_description": "FloralFusion offers a blend of floral-inspired fashion.",
+                "brand_logo": "https://example.com/floralfusion-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on orders over $50. Standard delivery within 3-5 business days.",
+        "color": [
+            {
+                "color1": "blue",
+                "color2": "pink",
+                "color3": "white"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Leather Biker Jacket",
+        "image": "https://example.com/leather-jacket.jpg",
+        "rating": "4.6",
+        "price": "80",
+        "option": "new arrivals",
+        "category": "Shoes",
+        "description": "A classic leather biker jacket for a cool and edgy look.",
+        "product_code": "136",
+        "tag": "LJ-2",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "BikerStyle",
+                "brand_description": "BikerStyle specializes in trendy biker apparel and accessories.",
+                "brand_logo": "https://example.com/bikerstyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $100.",
+        "color": [
+            {
+                "color1": "black",
+                "color2": "brown",
+                "color3": "red"
+            }
+        ],
+        "size": [
+            {
+                "size1": "XS",
+                "size2": "S",
+                "size3": "M"
+            }
+        ]
+    },
+    {
+        "name": "Elegant Lace Wedding Gown",
+        "image": "https://example.com/wedding-gown.jpg",
+        "rating": "4.9",
+        "price": "350",
+        "option": "featured items",
+        "category": "Shoes",
+        "description": "A stunning lace wedding gown for your special day.",
+        "product_code": "135",
+        "tag": "WG-5",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "BridalBliss",
+                "brand_description": "BridalBliss specializes in creating dream wedding dresses.",
+                "brand_logo": "https://example.com/bridalbliss-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on all wedding gown orders. Expect delivery within 4-6 weeks.",
+        "color": [
+            {
+                "color1": "ivory",
+                "color2": "white",
+                "color3": "champagne"
+            }
+        ],
+        "size": [
+            {
+                "size1": "XS",
+                "size2": "S",
+                "size3": "M"
+            }
+        ]
+    },
+    {
+        "name": "Men's Stylish Leather Jacket",
+        "image": "https://example.com/leather-jacket.jpg",
+        "rating": "4.7",
+        "price": "120",
+        "option": "new arrivals",
+        "category": "Shoes",
+        "description": "A fashionable leather jacket for men, perfect for casual wear.",
+        "product_code": "136",
+        "tag": "MJ-2",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "StylishWardrobe",
+                "brand_description": "StylishWardrobe offers a wide range of trendy fashion items for men.",
+                "brand_logo": "https://example.com/stylishwardrobe-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on all jacket orders. Standard delivery within 5-7 business days.",
+        "color": [
+            {
+                "color1": "black",
+                "color2": "brown",
+                "color3": "gray"
+            }
+        ],
+        "size": [
+            {
+                "size1": "L",
+                "size2": "XL",
+                "size3": "XXL"
+            }
+        ]
+    },
+    {
+        "name": "Formal Checkered Shirt",
+        "image": "https://example.com/checkered-shirt.jpg",
+        "rating": "4.2",
+        "price": "40",
+        "option": "new arrivals",
+        "category": "Tops & T-Shirt",
+        "description": "A stylish checkered shirt for formal occasions.",
+        "product_code": "135",
+        "tag": "CS-1",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "FormaStyle",
+                "brand_description": "FormaStyle offers fashionable formal wear for modern individuals.",
+                "brand_logo": "https://example.com/formastyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free delivery for orders above $50. Standard delivery within 3-5 business days.",
+        "color": [
+            {
+                "color1": "blue",
+                "color2": "gray",
+                "color3": "white"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Casual Canvas Backpack",
+        "image": "https://example.com/canvas-backpack.jpg",
+        "rating": "4.7",
+        "price": "55",
+        "option": "featured items",
+        "category": "Tops & T-Shirt",
+        "description": "A durable canvas backpack for everyday use.",
+        "product_code": "136",
+        "tag": "CBP-4",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "UrbanTrek",
+                "brand_description": "UrbanTrek specializes in urban-style accessories for the modern lifestyle.",
+                "brand_logo": "https://example.com/urbantrek-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $50.",
+        "color": [
+            {
+                "color1": "black",
+                "color2": "gray",
+                "color3": "blue"
+            }
+        ],
+        "size": [
+            {
+                "size1": "Small",
+                "size2": "Medium",
+                "size3": "Large"
+            }
+        ]
+    },
+    {
+        "name": "Ruffled Summer Dress",
+        "image": "https://example.com/summer-dress.jpg",
+        "rating": "4.7",
+        "price": "50",
+        "option": "featured items",
+        "category": "Dresses",
+        "description": "A stylish ruffled summer dress for a trendy look.",
+        "product_code": "135",
+        "tag": "SD-1",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "SummerStyle",
+                "brand_description": "SummerStyle offers fashionable summer clothing for all occasions.",
+                "brand_logo": "https://example.com/summerstyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on all orders. Delivery within 3-5 business days.",
+        "color": [
+            {
+                "color1": "blue",
+                "color2": "pink",
+                "color3": "yellow"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Genuine Leather Wallet",
+        "image": "https://example.com/leather-wallet.jpg",
+        "rating": "4.9",
+        "price": "40",
+        "option": "new arrivals",
+        "category": "Accessories",
+        "description": "A high-quality genuine leather wallet for your essentials.",
+        "product_code": "136",
+        "tag": "WL-5",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "LeatherCraft",
+                "brand_description": "LeatherCraft specializes in handcrafted leather accessories.",
+                "brand_logo": "https://example.com/leathercraft-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $50.",
+        "color": [
+            {
+                "color1": "brown",
+                "color2": "black",
+                "color3": "tan"
+            }
+        ],
+        "size": [
+            {
+                "size1": "One Size"
+            }
+        ]
+    },
+    {
+        "name": "Summer Floral Sundress",
+        "image": "https://example.com/sundress.jpg",
+        "rating": "4.3",
+        "price": "45",
+        "option": "new arrivals",
+        "category": "Accessories",
+        "description": "A lightweight and stylish sundress for those sunny days.",
+        "product_code": "135",
+        "tag": "SD-7",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "FloralTrends",
+                "brand_description": "FloralTrends brings you the latest floral fashion for every season.",
+                "brand_logo": "https://example.com/floraltrends-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on orders over $50. Expect delivery within 2-4 business days.",
+        "color": [
+            {
+                "color1": "yellow",
+                "color2": "blue",
+                "color3": "pink"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Leather Messenger Bag",
+        "image": "https://example.com/messenger-bag.jpg",
+        "rating": "4.6",
+        "price": "70",
+        "option": "featured items",
+        "category": "Accessories",
+        "description": "A classic leather messenger bag for work or travel.",
+        "product_code": "136",
+        "tag": "MB-5",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "LeatherCrafters",
+                "brand_description": "LeatherCrafters specializes in crafting high-quality leather goods.",
+                "brand_logo": "https://example.com/leathercrafters-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $60.",
+        "color": [
+            {
+                "color1": "brown",
+                "color2": "black",
+                "color3": "tan"
+            }
+        ],
+        "size": [
+            {
+                "size1": "Medium",
+                "size2": "Large"
+            }
+        ]
+    },
+    {
+        "name": "Elegant Evening Gown",
+        "image": "https://example.com/evening-gown.jpg",
+        "rating": "4.7",
+        "price": "85",
+        "option": "new arrivals",
+        "category": "Dresses",
+        "description": "A stunning evening gown for special occasions.",
+        "product_code": "135",
+        "tag": "EG-1",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "GlamourStyle",
+                "brand_description": "GlamourStyle offers elegant fashion for special moments.",
+                "brand_logo": "https://example.com/glamourstyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Free shipping on all orders. Expect delivery within 4-6 business days.",
+        "color": [
+            {
+                "color1": "blue",
+                "color2": "black",
+                "color3": "red"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Leather Shoulder Bag",
+        "image": "https://example.com/shoulder-bag.jpg",
+        "rating": "4.6",
+        "price": "65",
+        "option": "new arrivals",
+        "category": "Tops & T-Shirt",
+        "description": "A stylish leather shoulder bag for everyday use.",
+        "product_code": "136",
+        "tag": "SB-2",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "LeatherLux",
+                "brand_description": "LeatherLux offers high-quality leather accessories for fashion enthusiasts.",
+                "brand_logo": "https://example.com/leatherlux-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $50.",
+        "color": [
+            {
+                "color1": "brown",
+                "color2": "black",
+                "color3": "tan"
+            }
+        ],
+        "size": [
+            {
+                "size1": "Small",
+                "size2": "Medium",
+                "size3": "Large"
+            }
+        ]
+    },
+    {
+        "name": "Vintage Woolen Coat",
+        "image": "https://example.com/woolen-coat.jpg",
+        "rating": "4.3",
+        "price": "85",
+        "option": "featured items",
+        "category": "Backpack",
+        "description": "A classic vintage woolen coat to keep you warm in style.",
+        "product_code": "135",
+        "tag": "WC-4",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "VintageStyle",
+                "brand_description": "VintageStyle brings you timeless fashion inspired by the past.",
+                "brand_logo": "https://example.com/vintagestyle-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 5-7 business days. Free shipping on orders over $75.",
+        "color": [
+            {
+                "color1": "gray",
+                "color2": "navy",
+                "color3": "brown"
+            }
+        ],
+        "size": [
+            {
+                "size1": "S",
+                "size2": "M",
+                "size3": "L"
+            }
+        ]
+    },
+    {
+        "name": "Leather Messenger Bag",
+        "image": "https://example.com/messenger-bag.jpg",
+        "rating": "4.7",
+        "price": "70",
+        "option": "featured items",
+        "category": "Backpack",
+        "description": "A stylish leather messenger bag for work or travel.",
+        "product_code": "136",
+        "tag": "MB-7",
+        "sample_img": [
+            "https://example.com/summer-dress-img1.jpg",
+            "https://example.com/summer-dress-img2.jpg",
+            "https://example.com/summer-dress-img3.jpg",
+            "https://example.com/summer-dress-img4.jpg",
+            "https://example.com/summer-dress-img5.jpg"
+        ],
+        "brand_details": [
+            {
+                "brand_name": "LeatherCraft",
+                "brand_description": "LeatherCraft specializes in high-quality leather products for professionals.",
+                "brand_logo": "https://example.com/leathercraft-logo.jpg"
+            }
+        ],
+        "delivery_policies": "Standard shipping with a delivery time of 4-6 business days. Free shipping on orders over $60.",
+        "color": [
+            {
+                "color1": "black",
+                "color2": "brown",
+                "color3": "tan"
+            }
+        ],
+        "size": [
+            {
+                "size1": "Small",
+                "size2": "Medium",
+                "size3": "Large"
             }
         ]
     }
