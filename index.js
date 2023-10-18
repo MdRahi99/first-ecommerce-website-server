@@ -41,8 +41,12 @@ async function run() {
       const result = await products.findOne(query);
       res.send(result);
     });
-
-    
+    app.get('/similarProduct/:price', async (req, res) => {
+      const price = req.params.price;
+      const query = {price:{$lt:price}};
+      const result =await products.findOne(query);
+      res.send(result);
+    });
 
   } finally { }
 }
