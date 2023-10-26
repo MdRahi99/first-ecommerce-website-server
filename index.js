@@ -22,6 +22,7 @@ async function run() {
   try {
     const productsCategory = client.db('FirstECommerceDB').collection('productsCategory');
     const products = client.db('FirstECommerceDB').collection('products');
+    const cartProducts = client.db('FirstECommerceDB').collection('cartProducts');
 
     app.get('/products-categories', async (req, res) => {
       const query = {};
@@ -43,10 +44,27 @@ async function run() {
     });
     app.get('/similarProduct/:price', async (req, res) => {
       const price = req.params.price;
-      const query = {price:{$lt:price}};
-      const result =await products.findOne(query);
+      const query = { price: { $lt: price } };
+      const result = await products.findOne(query);
       res.send(result);
     });
+    // --------------------------------- //
+    app.get('/carts', async (req, res) => {
+      const email = req.query.email;
+      if (!email) {
+        return res.json([])
+      }
+      const query = { email: email }
+      const result = await cartProducts.find(query).toArray();
+      res.send(result);
+    });
+
+    app.post('/carts', async (req, res) => {
+      const item = req.body;
+      const result = await cartProducts.insertOne(item);
+      res.send(result);
+    });
+    // --------------------------------- //
 
   } finally { }
 }
