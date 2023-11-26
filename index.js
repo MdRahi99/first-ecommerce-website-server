@@ -50,15 +50,16 @@ async function run() {
         process.env.ACCESS_TOKEN,
         { expiresIn: '1h' }
       );
-      res.send({token})
+      res.send({ token })
     });
 
-    app.get('/users', async(req, res) => {
+    // ------------------------------------
+    app.get('/users', async (req, res) => {
       const result = await usersCollection.find().toArray();
       res.send(result)
     });
 
-    app.post('/users', async(req, res) => {
+    app.post('/users', async (req, res) => {
       const user = req.body;
       const query = { email: user.email };
       const existingUser = await usersCollection.findOne(query);
@@ -69,12 +70,25 @@ async function run() {
       res.send(result)
     });
 
+    app.patch('/users/admin/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const updatedDoc = {
+        $set: {
+          role: 'admin'
+        }
+      }
+      const result = await usersCollection.updateOne(query, updatedDoc);
+      res.send(result);
+    });
+
     app.delete('/users/:id', async (req, res) => {
       const id = req.params.id;
       const query = { '_id': new ObjectId(id) };
       const result = await usersCollection.deleteOne(query);
       res.send(result);
     });
+    // ------------------------------------
 
     app.get('/products-categories', async (req, res) => {
       const query = {};
