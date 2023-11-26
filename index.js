@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const jwt = require('jsonwebtoken');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
 const port = process.env.PORT || 5000;
@@ -18,11 +19,38 @@ const client = new MongoClient(uri, {
   }
 });
 
+const verifyJWT = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  if (!authorization) {
+    return res.status(401).send({ error: true, message: 'unauthorized access' })
+  };
+
+  const token = authorization.split(' ')[1];
+  jwt.verify(token, process.env.ACCESS_TOKEN, (error, decoded) => {
+    if (error) {
+      return res.status(401).send({ error: true, message: 'unauthorized access' })
+    }
+    req.decoded = decoded;
+    next();
+  });
+};
+
 async function run() {
   try {
     const productsCategory = client.db('FirstECommerceDB').collection('productsCategory');
     const products = client.db('FirstECommerceDB').collection('products');
     const cartProducts = client.db('FirstECommerceDB').collection('cartProducts');
+
+    // jwt
+    app.post('/jwt', (req, res) => {
+      const user = req.body;
+      const token = jwt.sign(
+        user,
+        process.env.ACCESS_TOKEN,
+        { expiresIn: '1h' }
+      );
+      res.send({token})
+    });
 
     app.get('/products-categories', async (req, res) => {
       const query = {};
@@ -49,7 +77,7 @@ async function run() {
       res.send(result);
     });
     // --------------------------------- //
-    app.get('/carts', async (req, res) => {
+    app.get('/carts', verifyJWT, async (req, res) => {
       const email = req.query.email;
       if (!email) {
         return res.json([])
@@ -65,9 +93,9 @@ async function run() {
       res.send(result);
     });
 
-    app.delete('/carts/:id', async(req, res) => {
+    app.delete('/carts/:id', async (req, res) => {
       const id = req.params.id;
-      const query = {'_id': new ObjectId(id)};
+      const query = { '_id': new ObjectId(id) };
       const result = await cartProducts.deleteOne(query);
       res.send(result);
     });
