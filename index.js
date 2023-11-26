@@ -39,6 +39,7 @@ async function run() {
   try {
     const productsCategory = client.db('FirstECommerceDB').collection('productsCategory');
     const products = client.db('FirstECommerceDB').collection('products');
+    const usersCollection = client.db('FirstECommerceDB').collection('users');
     const cartProducts = client.db('FirstECommerceDB').collection('cartProducts');
 
     // jwt
@@ -50,6 +51,12 @@ async function run() {
         { expiresIn: '1h' }
       );
       res.send({token})
+    });
+
+    app.post('/users', async(req, res) => {
+      const users = req.body;
+      const result = await usersCollection.insertOne(users);
+      res.send(result)
     });
 
     app.get('/products-categories', async (req, res) => {
