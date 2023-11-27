@@ -24,7 +24,7 @@ const verifyJWT = (req, res, next) => {
   if (!authorization) {
     return res.status(401).send({ error: true, message: 'unauthorized access' })
   };
-  
+
   const token = authorization.split(' ')[1];
   jwt.verify(token, process.env.ACCESS_TOKEN, (error, decoded) => {
     if (error) {
@@ -53,8 +53,19 @@ async function run() {
       res.send({ token })
     });
 
+    // admin verify
+    const verifyAdmin = async (req, res, next) => {
+      const email = req.decoded.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      if (user?.role !== 'admin') {
+        return res.status(403).send({ error: true, message: 'forbidden access' })
+      }
+      next();
+    };
+
     // ------------------------------------
-    app.get('/users', verifyJWT, async (req, res) => {
+    app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
       const result = await usersCollection.find().toArray();
       res.send(result)
     });
@@ -70,15 +81,18 @@ async function run() {
       res.send(result)
     });
 
-    app.get('/users/admin/:email', verifyJWT, async(req, res) => {
+    app.get('/users/admin/:email', verifyJWT, async (req, res) => {
       const email = req.params.email;
-      const query = {email: email};
+      if (req.decoded.email !== email) {
+        res.send({ admin: false })
+      }
+      const query = { email: email };
       const user = await usersCollection.findOne(query);
-      const result = {admin: user?.role === 'admin'};
+      const result = { admin: user?.role === 'admin' };
       res.send(result);
     });
 
-    app.patch('/users/admin/:id', verifyJWT, async (req, res) => {
+    app.patch('/users/admin/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const updatedDoc = {
@@ -127,6 +141,10 @@ async function run() {
       const email = req.query.email;
       if (!email) {
         return res.send([])
+      }
+      const decodedEmail = req.decoded.email;
+      if (email !== decodedEmail) {
+        return res.status(403).send({ error: true, message: 'forbidden access' })
       }
       const query = { email: email }
       const result = await cartProducts.find(query).toArray();
