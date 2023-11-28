@@ -167,7 +167,7 @@ async function run() {
       const category = await cursor.toArray();
       res.send(category);
     });
-    app.get('/products', verifyJWT, async (req, res) => {
+    app.get('/products', async (req, res) => {
       const query = {};
       const cursor = products.find(query);
       const category = await cursor.toArray();
