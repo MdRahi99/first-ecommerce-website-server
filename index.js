@@ -111,9 +111,45 @@ async function run() {
       res.send(result);
     });
 
-    app.post('/product', async(req, res) => {
+    app.post('/product', async (req, res) => {
       const item = req.body;
       const result = await products.insertOne(item);
+      res.send(result);
+    });
+
+    app.put("/update-product/:id", verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updatedProduct = req.body;
+      const productInfo = {
+        $set: {
+          name: updatedProduct.name,
+          image: updatedProduct.image,
+          rating: updatedProduct.rating,
+          price: updatedProduct.price,
+          option: updatedProduct.option,
+          category: updatedProduct.category,
+          product_code: updatedProduct.product_code,
+          tag: updatedProduct.tag,
+          brand_name: updatedProduct.brand_name,
+          brand_description: updatedProduct.brand_description,
+          brand_logo: updatedProduct.brand_logo,
+          description: updatedProduct.description,
+          delivery_policies: updatedProduct.delivery_policies,
+          sample_img1: updatedProduct.sample_img1,
+          sample_img2: updatedProduct.sample_img2,
+          sample_img3: updatedProduct.sample_img3,
+          color1: updatedProduct.color1,
+          color2: updatedProduct.color2,
+          color3: updatedProduct.color3,
+          size1: updatedProduct.size1,
+          size2: updatedProduct.size2,
+          size3: updatedProduct.size3,
+        }
+      };
+
+      const result = await products.updateOne(filter, productInfo, options);
       res.send(result);
     });
 
