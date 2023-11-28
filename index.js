@@ -110,6 +110,19 @@ async function run() {
       const result = await usersCollection.deleteOne(query);
       res.send(result);
     });
+
+    app.post('/product', async(req, res) => {
+      const item = req.body;
+      const result = await products.insertOne(item);
+      res.send(result);
+    });
+
+    app.delete('/product/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { '_id': new ObjectId(id) };
+      const result = await products.deleteOne(query);
+      res.send(result);
+    });
     // ------------------------------------
 
     app.get('/products-categories', async (req, res) => {
@@ -118,13 +131,13 @@ async function run() {
       const category = await cursor.toArray();
       res.send(category);
     });
-    app.get('/products', async (req, res) => {
+    app.get('/products', verifyJWT, async (req, res) => {
       const query = {};
       const cursor = products.find(query);
       const category = await cursor.toArray();
       res.send(category);
     });
-    app.get('/products/:id', async (req, res) => {
+    app.get('/products/:id', verifyJWT, async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await products.findOne(query);
