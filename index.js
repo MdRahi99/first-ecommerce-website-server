@@ -2,8 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const jwt = require('jsonwebtoken');
+const SSLCommerzPayment = require('sslcommerz-lts')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
+const store_id = process.env.PAYMENT_SECRET_ID;
+const store_passwd = process.env.PAYMENT_SECRET_PASS;
+const is_live = false;
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
@@ -40,6 +44,7 @@ async function run() {
     const productsCategory = client.db('FirstECommerceDB').collection('productsCategory');
     const products = client.db('FirstECommerceDB').collection('products');
     const usersCollection = client.db('FirstECommerceDB').collection('users');
+    const paymentCollection = client.db('FirstECommerceDB').collection('payments');
     const cartProducts = client.db('FirstECommerceDB').collection('cartProducts');
 
     // jwt
@@ -211,6 +216,136 @@ async function run() {
       const query = { '_id': new ObjectId(id) };
       const result = await cartProducts.deleteOne(query);
       res.send(result);
+    });
+    // --------------------------------- //
+
+    // --------------------------------- //
+    app.post('/payment-info', async (req, res) => {
+      const order = req.body;
+      const {
+        firstName,
+        lastName,
+        email,
+        totalPrice,
+        phone,
+        currency,
+        postcode,
+        address,
+        products
+      } = order;
+
+      if (!currency || !totalPrice || !firstName || !lastName || !email || !phone || !address || !postcode) {
+        return res.send({ error: "Please provide all information" })
+      }
+
+      const transactionId = new ObjectId().toString();
+
+      const data = {
+        total_amount: totalPrice,
+        currency: currency,
+        tran_id: transactionId, // use unique tran_id for each api call
+        success_url: `${process.env.SERVER_URL}/payment/success?transactionId=${transactionId}`,
+        fail_url: `${process.env.SERVER_URL}/payment/fail?transactionId=${transactionId}`,
+        cancel_url: `${process.env.SERVER_URL}/payment/cancel?transactionId=${transactionId}`,
+        ipn_url: 'http://localhost:3030/ipn',
+        shipping_method: 'Courier',
+        product_name: 'Computer.',
+        product_category: 'Electronic',
+        product_profile: 'general',
+        cus_name: firstName + ' ' + lastName,
+        cus_email: email,
+        cus_add1: 'Dhaka',
+        cus_add2: 'Dhaka',
+        cus_city: 'Dhaka',
+        cus_state: 'Dhaka',
+        cus_postcode: '1000',
+        cus_country: 'Bangladesh',
+        cus_phone: phone,
+        cus_fax: '01711111111',
+        ship_name: 'Customer Name',
+        ship_add1: address,
+        ship_add2: 'Dhaka',
+        ship_city: 'Dhaka',
+        ship_state: 'Dhaka',
+        ship_postcode: postcode,
+        ship_country: 'Bangladesh',
+      };
+      const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live)
+      sslcz.init(data).then(apiResponse => {
+        // Redirect the user to payment gateway
+        let GatewayPageURL = apiResponse.GatewayPageURL;
+        const query = { _id: { $in: products.map(id => new ObjectId(id._id)) } };
+        paymentCollection.insertOne({
+          ...order,
+          transactionId,
+          paid: false
+        })
+          .then(() => {
+            cartProducts.deleteMany(query)
+              .then(deleteResult => {
+                console.log(`Deleted ${deleteResult.deletedCount} cart items`);
+              })
+              .catch(error => {
+                console.error('Error deleting cart items:', error);
+              });
+
+            res.send({ url: GatewayPageURL });
+          })
+          .catch(error => {
+            console.error('Error inserting into paymentCollection:', error);
+            res.status(500).send({ error: 'Internal Server Error' });
+          });
+      })
+    });
+
+    app.post('/payment/success', async (req, res) => {
+      console.log('Success');
+      const { transactionId } = req.query;
+
+      if (!transactionId) {
+        return res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+
+      const paymentResult = await paymentCollection.updateOne(
+        { transactionId },
+        { $set: { paid: true, paidAt: new Date() } }
+      );
+
+      if (paymentResult.modifiedCount > 0) {
+        res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
+      } else {
+        res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+    });
+
+    app.post('/payment/fail', async (req, res) => {
+      console.log('Fail');
+      const { transactionId } = req.query;
+      if (!transactionId) {
+        return res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+      const result = await paymentCollection.deleteOne({ transactionId });
+      if (result.deletedCount) {
+        res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+    });
+
+    app.post('/payment/cancel', async (req, res) => {
+      console.log('Cancel');
+      const { transactionId } = req.query;
+      if (!transactionId) {
+        return res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+      const result = await paymentCollection.deleteOne({ transactionId });
+      if (result.deletedCount) {
+        res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+      }
+    });
+
+    app.get('/orders/by-transaction-id/:id', verifyJWT, async (req, res) => {
+      const { id } = req.params;
+      const order = await paymentCollection.findOne({ transactionId: id });
+      res.send(order)
     });
     // --------------------------------- //
 
