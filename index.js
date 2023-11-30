@@ -58,6 +58,17 @@ async function run() {
       res.send({ token })
     });
 
+    app.post('/users', async (req, res) => {
+      const user = req.body;
+      const query = { email: user.email };
+      const existingUser = await usersCollection.findOne(query);
+      if (existingUser) {
+        return res.send({ message: 'user already exists' })
+      }
+      const result = await usersCollection.insertOne(user);
+      res.send(result)
+    });
+
     // admin verify
     const verifyAdmin = async (req, res, next) => {
       const email = req.decoded.email;
@@ -80,15 +91,23 @@ async function run() {
       res.send(result)
     });
 
-    app.post('/users', async (req, res) => {
-      const user = req.body;
-      const query = { email: user.email };
-      const existingUser = await usersCollection.findOne(query);
-      if (existingUser) {
-        return res.send({ message: 'user already exists' })
+    app.put('/payments/:id', verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const updatedDoc = {
+        $set: {
+          status: 'Delivered'
+        }
       }
-      const result = await usersCollection.insertOne(user);
-      res.send(result)
+      const result = await paymentCollection.updateOne(query, updatedDoc);
+      res.send(result);
+    });
+
+    app.delete('/payments/:id', verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id;
+      const query = { '_id': new ObjectId(id) };
+      const result = await paymentCollection.deleteOne(query);
+      res.send(result);
     });
 
     app.get('/users/admin/:email', verifyJWT, async (req, res) => {
