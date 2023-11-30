@@ -10,6 +10,7 @@ const store_passwd = process.env.PAYMENT_SECRET_PASS;
 const is_live = false;
 const port = process.env.PORT || 5000;
 
+// middlewares
 app.use(express.json());
 app.use(cors());
 
