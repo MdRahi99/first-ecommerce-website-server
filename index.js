@@ -121,7 +121,7 @@ async function run() {
       res.send(result);
     });
 
-    app.patch('/users/admin/:id', async (req, res) => {
+    app.patch('/users/admin/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const updatedDoc = {
@@ -133,14 +133,14 @@ async function run() {
       res.send(result);
     });
 
-    app.delete('/users/:id', async (req, res) => {
+    app.delete('/users/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { '_id': new ObjectId(id) };
       const result = await usersCollection.deleteOne(query);
       res.send(result);
     });
 
-    app.post('/product', async (req, res) => {
+    app.post('/product', verifyJWT, verifyAdmin, async (req, res) => {
       const item = req.body;
       const result = await products.insertOne(item);
       res.send(result);
@@ -182,7 +182,7 @@ async function run() {
       res.send(result);
     });
 
-    app.delete('/product/:id', async (req, res) => {
+    app.delete('/product/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { '_id': new ObjectId(id) };
       const result = await products.deleteOne(query);
