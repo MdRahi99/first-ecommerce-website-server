@@ -58,6 +58,17 @@ async function run() {
       res.send({ token })
     });
 
+    app.post('/users', async (req, res) => {
+      const user = req.body;
+      const query = { email: user.email };
+      const existingUser = await usersCollection.findOne(query);
+      if (existingUser) {
+        return res.send({ message: 'user already exists' })
+      }
+      const result = await usersCollection.insertOne(user);
+      res.send(result)
+    });
+
     // admin verify
     const verifyAdmin = async (req, res, next) => {
       const email = req.decoded.email;
@@ -80,15 +91,28 @@ async function run() {
       res.send(result)
     });
 
-    app.post('/users', async (req, res) => {
-      const user = req.body;
-      const query = { email: user.email };
-      const existingUser = await usersCollection.findOne(query);
-      if (existingUser) {
-        return res.send({ message: 'user already exists' })
-      }
-      const result = await usersCollection.insertOne(user);
+    app.get('/payments', verifyJWT, verifyAdmin, async (req, res) => {
+      const result = await paymentCollection.find().toArray();
       res.send(result)
+    });
+
+    app.put('/payments/:id', verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const updatedDoc = {
+        $set: {
+          status: 'Delivered'
+        }
+      }
+      const result = await paymentCollection.updateOne(query, updatedDoc);
+      res.send(result);
+    });
+
+    app.delete('/payments/:id', verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id;
+      const query = { '_id': new ObjectId(id) };
+      const result = await paymentCollection.deleteOne(query);
+      res.send(result);
     });
 
     app.get('/users/admin/:email', verifyJWT, async (req, res) => {
@@ -102,7 +126,7 @@ async function run() {
       res.send(result);
     });
 
-    app.patch('/users/admin/:id', async (req, res) => {
+    app.patch('/users/admin/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const updatedDoc = {
@@ -114,14 +138,14 @@ async function run() {
       res.send(result);
     });
 
-    app.delete('/users/:id', async (req, res) => {
+    app.delete('/users/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { '_id': new ObjectId(id) };
       const result = await usersCollection.deleteOne(query);
       res.send(result);
     });
 
-    app.post('/product', async (req, res) => {
+    app.post('/product', verifyJWT, verifyAdmin, async (req, res) => {
       const item = req.body;
       const result = await products.insertOne(item);
       res.send(result);
@@ -163,7 +187,7 @@ async function run() {
       res.send(result);
     });
 
-    app.delete('/product/:id', async (req, res) => {
+    app.delete('/product/:id', verifyJWT, verifyAdmin, async (req, res) => {
       const id = req.params.id;
       const query = { '_id': new ObjectId(id) };
       const result = await products.deleteOne(query);
