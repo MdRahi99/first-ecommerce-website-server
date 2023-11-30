@@ -69,9 +69,14 @@ async function run() {
       next();
     };
 
-    // ------------------------------------
+    // ---------------- Admin --------------------
     app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
       const result = await usersCollection.find().toArray();
+      res.send(result)
+    });
+
+    app.get('/payments', verifyJWT, verifyAdmin, async (req, res) => {
+      const result = await paymentCollection.find().toArray();
       res.send(result)
     });
 
@@ -164,33 +169,37 @@ async function run() {
       const result = await products.deleteOne(query);
       res.send(result);
     });
-    // ------------------------------------
 
+    // ---------------- Products --------------------
     app.get('/products-categories', async (req, res) => {
       const query = {};
       const cursor = productsCategory.find(query);
       const category = await cursor.toArray();
       res.send(category);
     });
+
     app.get('/products', async (req, res) => {
       const query = {};
       const cursor = products.find(query);
       const category = await cursor.toArray();
       res.send(category);
     });
+
     app.get('/products/:id', verifyJWT, async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await products.findOne(query);
       res.send(result);
     });
+
     app.get('/similarProduct/:price', async (req, res) => {
       const price = req.params.price;
       const query = { price: { $lt: price } };
       const result = await products.findOne(query);
       res.send(result);
     });
-    // --------------------------------- //
+
+    // --------------- User ------------------ //
     app.get('/carts', verifyJWT, async (req, res) => {
       const email = req.query.email;
       if (!email) {
@@ -219,7 +228,7 @@ async function run() {
     });
     // --------------------------------- //
 
-    // --------------------------------- //
+    // -------------- Payment ------------------- //
     app.get('/payment-info/:email', verifyJWT, async (req, res) => {
       const email = req.params.email;
       const query = { email: email };
@@ -227,7 +236,7 @@ async function run() {
       res.send(result);
     });
 
-    app.post('/payment-info', async (req, res) => {
+    app.post('/payment-info', verifyJWT, async (req, res) => {
       const order = req.body;
       const {
         firstName,
